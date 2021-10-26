@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 1024px;
+    min-height: 768px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 50px;
+    background: #141414;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    min-width: 160px;
+}
+
+.header-left img {
+    margin-right: 5px;
+}
+
+.header-left p {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    line-height: 50px;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 160px;
+}
+
+.header-right img {
+    cursor: pointer;
+}
+
+.header-right #header-power-btn,
+.header-right #header-info-btn {
+    margin-right: 30px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    padding: 24px;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background: #141414;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.panel .img-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.panel .btn-turn-on {
+    margin-bottom: 36px;
+}
+
+.panel .device-img {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    height: 130px;
+}
+
+.panel-power-on {
+    box-shadow: 0 0 1px 1px #485261;
+}
+
+.panel-power-on .device-img {
+    margin-top: 60px;
+    margin-bottom: 0;
+    width: auto;
+    height: 130px;
+}
+
+@media screen and (min-width: 1900px) {
+    .panel .device-img {
+        height: 200px;
+    }
+    .panel-power-on .device-img {
+        width: 216px;
+        height: auto;
+    }
+    .panel-power-on .air-con-on-img {
+        height: 320px;
+        width: auto;
+    }
+    .panel-power-on .air-con-mode-text {
+        top: 300px;
+    }
+    .control-btn-l {
+        flex: 1;
+        margin-right: 24px;
+    }
+}
+
+.panel p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.btn {
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-turn-on {
+    width: 140px;
+    height: 40px;
+    border-radius: 24px;
+    background: #3370FF;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.btn-turn-on:hover {
+    background-color: #3370ffce;
+    transition: ease-in-out 0.3s;
+}
+
+.btn-turn-off {
+    width: 140px;
+    height: 40px;
+    border-radius: 24px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    border: 2px solid #485261;
+}
+
+.btn-turn-off:hover {
+    background: rgba(245, 246, 247, 0.1);
+    border-color: #a6b5de60;
+    transition: ease-in-out 0.3s;
+}
+
+.control-btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-btn-l {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 100px;
+    border-radius: 12px;
+    background-color: #000;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.control-btn-group .control-btn-l:last-child {
+    margin-right: 0;
+}
+
+.control-btn-l img {
+    margin-bottom: 8px;
+    width: 50px;
+    height: 50px;
+}
+
+.control-btn-l:hover,
+.control-btn-m:hover {
+    background: rgba(245, 246, 247, 0.1);
+    transition: ease-in-out 0.3s;
+}
+
+.control-btn-m {
+    width: 120px;
+    height: 60px;
+    background: #000;
+    border-radius: 16px;
+}
+
+.btn-active {
+    background-color: #3370FF;
+}
+
+.btn-active:hover {
+    background-color: #3370ffce;
+}
+
+.light-control {
+    flex: 1;
+    margin-right: 24px;
+    text-align: center;
+}
+
+.air-con-control {
+    flex: 1;
+    text-align: center;
+}
+
+.temperature-control {
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.temperature-control p {
+    font-size: 36px;
+    line-height: 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    padding: 30px;
+}
+
+.footer-text-zh {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.footer-text-en {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 500;
+}
+
+.footer-text-hint {
+    font-size: 16px;
+    line-height: 19px;
+    color: #8F959E;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+.oncall-btn {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oncall-btn p {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #DEE0E3;
+}
+
+
+/* 空调面板 */
+
+.panel-power-on .air-con-on-img {
+    height: 210px;
+    width: auto;
+}
+
+.panel-power-on .air-con-mode-text {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    display: block;
+    width: 50px;
+    margin-left: -25px;
+    margin-top: 0;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.air-con-control .control-btn-l img {
+    width: 40px;
+    height: 40px;
+}
+
+.air-con-control .temperature-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 190px;
+    height: 64px;
+}
+
+.top-wrapper,
+.bottom-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.middle-wrapper {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.text-mark {
+    font-size: 12px !important;
+    color: rgba(245, 246, 247, 0.3)
+}
+
+.upper-mark {
+    position: absolute;
+    top: 0;
+    right: 56px;
+}
+
+.scale {
+    width: 1px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 12px;
+}
+
+.scale-long {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.top-wrapper .scale:last-child,
+.bottom-wrapper .scale:last-child {
+    margin-right: 0;
+}
+
+.current-mark {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    width: 1px;
+    height: 64px;
+    background-color: #3370FF;
+}
+
+.current-mark .arrow-down {
+    /* position: absolute;
+    left: 0; */
+    margin-left: -5px;
+    margin-top: -5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    border-radius: 40px;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Room Demo</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class='header'>
+            <div class="header-left">
+                <img src="./asset/Icon/header/meter.png" height='24.5' alt="header icon" />
+                <div>
+                    <p>22℃</p>
+                    <p>Room Temperature</p>
+                </div>
+            </div>
+            <div class="header-center">
+                <p>Beijing-Zijin(紫金)-F5-15(8)</p>
+            </div>
+            <div class="header-right">
+                <img id="header-power-btn" src="./asset/Icon/header/power.svg" alt="header icon" />
+                <img id="header-info-btn" src="./asset/Icon/header/info.svg" alt="header icon" />
+                <img id="header-export-btn" src="./asset/Icon/header/export.svg" alt="header icon" />
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- <div class="panel light-control panel-power-off">
+                <div class="img-wrapper">
+                    <img class="device-img" src="./asset/Icon/device/Material icon/Light/0ff.png" alt="light off">
+                    <p>Light</p>
+                </div>
+                <button class='btn btn-turn-on'>Turn On</button>
+            </div> -->
+
+            <div class="panel light-control panel-power-on">
+                <div class="panel-header">
+                    <p>Light</p>
+                    <button class='btn btn-turn-off'>Turn Off</button>
+                </div>
+                <div class="img-wrapper">
+                    <img class="device-img" src="./asset/Icon/device/Material icon/Light/on.png" alt="light on">
+                </div>
+                <div class="control-btn-group">
+                    <button class='btn control-btn-l btn-active'>
+                        <img src="./asset/Icon/icon/Light/Talkingn-highlight.svg" alt="">
+                        Talking
+                    </button>
+
+                    <button class='btn control-btn-l'>
+                        <img src="./asset/Icon/icon/Light/Presentation-highlight.svg" alt="">
+                        Presentation
+                    </button>
+
+                    <button class='btn control-btn-l'>
+                        <img src="./asset/Icon/icon/Light/Customize-highlight.svg" alt="">
+                        Customize
+                    </button>
+                </div>
+            </div>
+
+            <!-- <div class="panel air-con-control panel-power-off">
+                <div class="img-wrapper">
+                    <img class="device-img" src="./asset/Icon/device/Material icon/Air Conditioner.png" alt="air con off">
+                    <p>Air Conditioner</p>
+                </div>
+                <button class='btn btn-turn-on'>Turn On</button>
+            </div> -->
+
+            <div class="panel air-con-control panel-power-on">
+                <div class="panel-header">
+                    <p>Air Conditioner</p>
+                    <button class='btn btn-turn-off'>Turn Off</button>
+                </div>
+                <div class="img-wrapper">
+                    <img class="device-img air-con-on-img" src="./asset/Icon/device/Material icon/Air Conditioner On.png" alt="air con on">
+                    <p class="air-con-mode-text">Cold</p>
+                </div>
+                <div class="control-btn-group temperature-control">
+                    <button class='btn control-btn-m'>
+                        <img src="./asset/Icon/minus.svg" alt="">
+                    </button>
+                    <div class="temperature-display">
+                        <p class="upper-mark">°</p>
+                        <div class="current-mark">
+                            <div class="arrow-down"></div>
+                        </div>
+                        <div class="top-wrapper">
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                        </div>
+                        <div class="middle-wrapper">
+                            <p class="text-mark">18°</p>
+                            <p>22</p>
+                            <p class="text-mark">30°</p>
+                        </div>
+                        <div class="bottom-wrapper">
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale"></div>
+                            <div class="scale scale-long"></div>
+                        </div>
+                    </div>
+
+                    <button class='btn control-btn-m'>
+                        <img src="./asset/Icon/plus.svg" alt="">
+                    </button>
+                </div>
+                <div class="control-btn-group">
+                    <button class='btn control-btn-l btn-active'>
+                        <img src="./asset/Icon/Speed-L.svg" alt="">
+                        Speed-L
+                    </button>
+
+                    <button class='btn control-btn-l'>
+                        <img src="./asset/Icon/Speed-M.svg" alt="">
+                        Speed-M
+                    </button>
+
+                    <button class='btn control-btn-l'>
+                        <img src="./asset/Icon/Speed-S.svg" alt="">
+                        Speed-H
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <p class="footer-text-zh">请爱护会议室环境卫生，严禁吸烟、饮食、乱丢杂物！</p>
+                <p class="footer-text-en">Please keep the conference room clean. Smoking and eating are not allowed here.
+                </p>
+                <p class="footer-text-hint">如需帮助，请扫描面左侧二维码联系IT人员</p>
+            </div>
+            <div class="footer-right">
+                <img src="./asset/Icon/footer/QRcode-small.png" width="108" alt="qr code">
+                <div class="oncall-btn">
+                    <img src="./asset/Icon/footer/icon_zoom out.svg" alt="oncall">
+                    <p>Oncall</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
