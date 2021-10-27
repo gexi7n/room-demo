@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-saclable=0 ">
     <link rel="stylesheet" href="./style.css">
     <title>Room Demo</title>
 </head>
@@ -30,59 +30,59 @@
         </div>
 
         <div class="content">
-            <!-- <div class="panel light-control panel-power-off">
+            <div id="light-off-panel" class="panel light-control panel-power-off">
                 <div class="img-wrapper">
                     <img class="device-img" src="./asset/Icon/device/Material icon/Light/0ff.png" alt="light off">
                     <p>Light</p>
                 </div>
-                <button class='btn btn-turn-on'>Turn On</button>
-            </div> -->
+                <button id="light-on-btn" class='btn btn-turn-on'>Turn On</button>
+            </div>
 
-            <div class="panel light-control panel-power-on">
+            <div id="light-on-panel" class="panel light-control panel-power-on">
                 <div class="panel-header">
                     <p>Light</p>
-                    <button class='btn btn-turn-off'>Turn Off</button>
+                    <button id="light-off-btn" class='btn btn-turn-off'>Turn Off</button>
                 </div>
                 <div class="img-wrapper">
-                    <img class="device-img" src="./asset/Icon/device/Material icon/Light/on.png" alt="light on">
+                    <img class="device-img light-on-img" src="./asset/Icon/device/Material icon/Light/on.png" alt="light on">
                 </div>
                 <div class="control-btn-group">
-                    <button class='btn control-btn-l btn-active'>
+                    <button id="talking-mode-btn" class='btn control-btn-l btn-active'>
                         <img src="./asset/Icon/icon/Light/Talkingn-highlight.svg" alt="">
                         Talking
                     </button>
 
-                    <button class='btn control-btn-l'>
+                    <button id="presentation-mode-btn" class='btn control-btn-l'>
                         <img src="./asset/Icon/icon/Light/Presentation-highlight.svg" alt="">
                         Presentation
                     </button>
 
-                    <button class='btn control-btn-l'>
+                    <button id="customize-mode-btn" class='btn control-btn-l'>
                         <img src="./asset/Icon/icon/Light/Customize-highlight.svg" alt="">
                         Customize
                     </button>
                 </div>
             </div>
 
-            <!-- <div class="panel air-con-control panel-power-off">
+            <div id="air-con-off-panel" class="panel air-con-control panel-power-off">
                 <div class="img-wrapper">
                     <img class="device-img" src="./asset/Icon/device/Material icon/Air Conditioner.png" alt="air con off">
                     <p>Air Conditioner</p>
                 </div>
-                <button class='btn btn-turn-on'>Turn On</button>
-            </div> -->
+                <button id="air-con-on-btn" class='btn btn-turn-on'>Turn On</button>
+            </div>
 
-            <div class="panel air-con-control panel-power-on">
+            <div id="air-con-on-panel" class="panel air-con-control panel-power-on">
                 <div class="panel-header">
                     <p>Air Conditioner</p>
-                    <button class='btn btn-turn-off'>Turn Off</button>
+                    <button id="air-con-off-btn" class='btn btn-turn-off'>Turn Off</button>
                 </div>
                 <div class="img-wrapper">
                     <img class="device-img air-con-on-img" src="./asset/Icon/device/Material icon/Air Conditioner On.png" alt="air con on">
                     <p class="air-con-mode-text">Cold</p>
                 </div>
                 <div class="control-btn-group temperature-control">
-                    <button class='btn control-btn-m'>
+                    <button id="temperature-minus-btn" class='btn control-btn-m'>
                         <img src="./asset/Icon/minus.svg" alt="">
                     </button>
                     <div class="temperature-display">
@@ -107,7 +107,7 @@
                         </div>
                         <div class="middle-wrapper">
                             <p class="text-mark">18°</p>
-                            <p>22</p>
+                            <p id="current-temperature">22</p>
                             <p class="text-mark">30°</p>
                         </div>
                         <div class="bottom-wrapper">
@@ -127,22 +127,22 @@
                         </div>
                     </div>
 
-                    <button class='btn control-btn-m'>
+                    <button id="temperature-plus-btn" class='btn control-btn-m'>
                         <img src="./asset/Icon/plus.svg" alt="">
                     </button>
                 </div>
                 <div class="control-btn-group">
-                    <button class='btn control-btn-l btn-active'>
+                    <button id="speed-l-btn" class='btn control-btn-l btn-active'>
                         <img src="./asset/Icon/Speed-L.svg" alt="">
                         Speed-L
                     </button>
 
-                    <button class='btn control-btn-l'>
+                    <button id="speed-m-btn" class='btn control-btn-l'>
                         <img src="./asset/Icon/Speed-M.svg" alt="">
                         Speed-M
                     </button>
 
-                    <button class='btn control-btn-l'>
+                    <button id="speed-h-btn" class='btn control-btn-l'>
                         <img src="./asset/Icon/Speed-S.svg" alt="">
                         Speed-H
                     </button>
@@ -167,5 +167,94 @@
         </div>
     </div>
 </body>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    $(document).ready(() => {
+        $("#light-on-btn").click(() => {
+            $("#light-off-panel").css("display", "none");
+            $("#light-on-panel").css("display", "flex");
+        })
+
+        $("#light-off-btn").click(() => {
+            $("#light-on-panel").css("display", "none");
+            $("#light-off-panel").css("display", "flex");
+        })
+
+        $("#talking-mode-btn").click(() => {
+            $("#presentation-mode-btn").removeClass("btn-active");
+            $("#customize-mode-btn").removeClass("btn-active");
+            $("#talking-mode-btn").addClass("btn-active");
+        })
+
+        $("#presentation-mode-btn").click(() => {
+            $("#talking-mode-btn").removeClass("btn-active");
+            $("#customize-mode-btn").removeClass("btn-active");
+            $("#presentation-mode-btn").addClass("btn-active");
+        })
+
+        $("#customize-mode-btn").click(() => {
+            $("#talking-mode-btn").removeClass("btn-active");
+            $("#presentation-mode-btn").removeClass("btn-active");
+            $("#customize-mode-btn").addClass("btn-active");
+        })
+
+        $("#air-con-on-btn").click(() => {
+            $("#air-con-off-panel").css("display", "none");
+            $("#air-con-on-panel").css("display", "flex");
+        })
+
+        $("#air-con-off-btn").click(() => {
+            $("#air-con-on-panel").css("display", "none");
+            $("#air-con-off-panel").css("display", "flex");
+        })
+
+        $("#speed-l-btn").click(() => {
+            $("#speed-m-btn").removeClass("btn-active");
+            $("#speed-h-btn").removeClass("btn-active");
+            $("#speed-l-btn").addClass("btn-active");
+        })
+
+        $("#speed-m-btn").click(() => {
+            $("#speed-l-btn").removeClass("btn-active");
+            $("#speed-h-btn").removeClass("btn-active");
+            $("#speed-m-btn").addClass("btn-active");
+        })
+
+        $("#speed-h-btn").click(() => {
+            $("#speed-l-btn").removeClass("btn-active");
+            $("#speed-m-btn").removeClass("btn-active");
+            $("#speed-h-btn").addClass("btn-active");
+        })
+
+        $("#temperature-minus-btn").click((e) => {
+            if ($("#current-temperature").text() > 18) {
+                e.preventDefault();
+                $(".current-mark").css({
+                    left: $(".current-mark").position().left - 13,
+                    // transition: 'ease-in-out 0.2s'
+                })
+                $("#current-temperature").text(
+                    (i, origText) => {
+                        return parseInt(origText) - 1;
+                    });
+            }
+        })
+
+        $("#temperature-plus-btn").click((e) => {
+            if ($("#current-temperature").text() < 30) {
+                e.preventDefault();
+                $(".current-mark").css({
+                    left: $(".current-mark").position().left + 13,
+                    // transition: 'ease-in-out 0.2s'
+                })
+                $("#current-temperature").text(
+                    (i, origText) => {
+                        return parseInt(origText) + 1;
+                    });
+            }
+        })
+    });
+</script>
 
 </html>

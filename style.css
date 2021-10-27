@@ -109,41 +109,25 @@ p {
 }
 
 .panel .device-img {
-    margin-top: 100px;
+    margin-top: 72px;
     margin-bottom: 30px;
     height: 130px;
 }
 
 .panel-power-on {
     box-shadow: 0 0 1px 1px #485261;
+    display: none;
 }
 
 .panel-power-on .device-img {
-    margin-top: 60px;
+    margin-top: 36px;
     margin-bottom: 0;
     width: auto;
-    height: 130px;
+    height: 160px;
 }
 
-@media screen and (min-width: 1900px) {
-    .panel .device-img {
-        height: 200px;
-    }
-    .panel-power-on .device-img {
-        width: 216px;
-        height: auto;
-    }
-    .panel-power-on .air-con-on-img {
-        height: 320px;
-        width: auto;
-    }
-    .panel-power-on .air-con-mode-text {
-        top: 300px;
-    }
-    .control-btn-l {
-        flex: 1;
-        margin-right: 24px;
-    }
+.light-on-img {
+    margin-top: 32px !important;
 }
 
 .panel p {
@@ -171,7 +155,7 @@ p {
 
 .btn-turn-on:hover {
     background-color: #3370ffce;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.2s;
 }
 
 .btn-turn-off {
@@ -187,7 +171,7 @@ p {
 .btn-turn-off:hover {
     background: rgba(245, 246, 247, 0.1);
     border-color: #a6b5de60;
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.2s;
 }
 
 .control-btn-group {
@@ -224,7 +208,7 @@ p {
 .control-btn-l:hover,
 .control-btn-m:hover {
     background: rgba(245, 246, 247, 0.1);
-    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.2s;
 }
 
 .control-btn-m {
@@ -234,7 +218,8 @@ p {
     border-radius: 16px;
 }
 
-.btn-active {
+.btn-active,
+.btn-active:active {
     background-color: #3370FF;
 }
 
@@ -313,7 +298,8 @@ p {
 /* 空调面板 */
 
 .panel-power-on .air-con-on-img {
-    height: 210px;
+    margin-top: 36px;
+    height: 202px;
     width: auto;
 }
 
@@ -366,6 +352,7 @@ p {
     position: absolute;
     top: 0;
     right: 56px;
+    z-index: 99;
 }
 
 .scale {
@@ -388,15 +375,13 @@ p {
 .current-mark {
     position: absolute;
     top: 0;
-    left: 32px;
+    left: 69px;
     width: 1px;
     height: 64px;
     background-color: #3370FF;
 }
 
 .current-mark .arrow-down {
-    /* position: absolute;
-    left: 0; */
     margin-left: -5px;
     margin-top: -5px;
     width: 0;
@@ -405,4 +390,30 @@ p {
     border-right: 5px solid transparent;
     border-top: 5px solid #fff;
     border-radius: 40px;
+}
+
+#current-temperature {
+    z-index: 99;
+}
+
+@media screen and (min-width: 1900px) {
+    .panel .device-img {
+        height: 200px;
+    }
+    .panel-power-on .device-img {
+        width: 216px;
+        height: auto;
+    }
+    .panel-power-on .air-con-on-img {
+        margin-top: 38px;
+        height: 312px;
+        width: auto;
+    }
+    .panel-power-on .air-con-mode-text {
+        top: 300px;
+    }
+    .control-btn-l {
+        flex: 1;
+        margin-right: 24px;
+    }
 }
