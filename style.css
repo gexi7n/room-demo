@@ -417,3 +417,36 @@ p {
         margin-right: 24px;
     }
 }
+
+@media screen and (max-height: 768px) {
+    .container {
+        /* border: 10px solid red; */
+    }
+    .panel .device-img {
+        height: 100px;
+    }
+    .panel-power-on .device-img {
+        width: 110px;
+        height: auto;
+    }
+    .panel-power-on .air-con-on-img {
+        margin-top: 36px;
+        height: 156px;
+        width: auto;
+    }
+    .panel-power-on .air-con-mode-text {
+        top: 170px;
+    }
+    .air-con-control .temperature-display {
+        width: 160px;
+    }
+    .upper-mark {
+        right: 44px;
+    }
+    .scale {
+        margin-right: 10px;
+    }
+    .current-mark {
+        left: 58px;
+    }
+}
